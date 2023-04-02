@@ -50,7 +50,7 @@ export class LoginScreenComponent {
   }
 
   guestLogin() {
-
+    this.router.navigateByUrl('/dashboard');
   }
 
 }

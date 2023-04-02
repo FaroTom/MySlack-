@@ -13,13 +13,15 @@ import { provideDatabase,getDatabase } from '@angular/fire/database';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { FIREBASE_OPTIONS } from '@angular/fire/compat';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MainPageComponent } from './main-page/main-page.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginScreenComponent,
-    SignupScreenComponent
+    SignupScreenComponent,
+    MainPageComponent
   ],
   imports: [
     BrowserModule,

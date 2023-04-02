@@ -1,11 +1,25 @@
 body {
-    margin: 0;
-    font-family: 'lato-regular';
+  margin: 0;
+  font-family: 'lato-regular';
 }
 
 @font-face {
-    font-family: 'lato-regular';
-    src: url('./assets/fonts/Lato-Regular.ttf');
-  }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+  font-family: 'lato-regular';
+  src: url('./assets/fonts/Lato-Regular.ttf');
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.logo {
+  position: absolute;
+  top: 3rem;
+  left: 3rem;
+}
