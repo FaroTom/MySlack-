@@ -1,0 +1,44 @@
+<div class="signup-screen-container">
+    <img class="logo" src="../../assets/img/logo.png">
+
+    <div class="newToSlack-container">
+        <p>Sie haben bereits einen Account?</p>
+        <a (click)="toLogin()">zum Login</a>
+    </div>
+
+    <div class="login-infos">
+
+        <h1>Registrierung</h1>
+
+        <form class="login-inputs" (submit)="signUp()">
+            <input class="name-input" [disabled]="loadingAnimation" [(ngModel)]="fullName" required name="fullName" type="text"
+                placeholder="Vor- und Nachname">
+            <input class="mail-input" [disabled]="loadingAnimation" [(ngModel)]="email" required name="email" type="email"
+                placeholder="Email">
+            <input class="password-input" [disabled]="loadingAnimation" [(ngModel)]="password" required name="password" type="password"
+                placeholder="Passwort">
+            <button type="submit">Jetzt registrieren</button>
+
+            <div class="strokes-container">
+                <hr>
+                <p>ODER</p>
+                <hr>
+            </div>
+
+            <button type="button" (click)="toLogin()">Zurück zur Anmeldung</button>
+        </form>
+
+    </div>
+
+    <div class="legalNotice-container">
+        <a href=""> Datenschutz & Bedingungen </a> | <a href="">Kontakt</a>
+    </div>
+
+    <div *ngIf="loadingAnimation" class="loader-container">
+        <div class="loader"></div>
+    </div>
+
+    <div *ngIf="userCreated" class="userCreated-container">
+        <div class="userCreated-alert">User was successfully created</div>
+    </div>
+</div>

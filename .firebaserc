@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "sleck-slack-clone": {
+      "hosting": {
+        "slack-clone": [
+          "sleck-slack-clone"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "sleck-slack-clone"
+  }
+}

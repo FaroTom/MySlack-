@@ -1,0 +1,36 @@
+<div class="login-screen-container">
+
+<img class="logo" src="../../assets/img/logo.png">
+
+<div class="newToSlack-container">
+    <p>Neu bei MySlack?</p>
+    <a (click)="toSignUp()">Account erstellen</a>
+</div>
+
+<div class="login-infos">
+
+    <h1>Anmeldung</h1>
+
+    <form [formGroup]="angForm" class="login-inputs" (submit)="login()">
+        <input class="mail-input" [(ngModel)]="email" required formControlName="email" type="email" placeholder="beispielname@email.com">
+        <input class="password-input" [(ngModel)]="password" required formControlName="password" type="password" placeholder="Passwort">
+        <button type="submit">Jetzt anmelden</button>
+
+        <div class="strokes-container">
+            <hr>
+            <p>ODER</p>
+            <hr>
+        </div>
+
+        <button type="button" (click)="guestLogin()">Guest Login</button>
+    </form>
+
+</div>
+
+<div class="legalNotice-container">
+  <a href=""> Datenschutz & Bedingungen </a> | <a href="">Kontakt</a>  
+</div>
+
+</div>
+
+
