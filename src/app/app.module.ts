@@ -14,6 +14,9 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { FIREBASE_OPTIONS } from '@angular/fire/compat';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MainPageComponent } from './main-page/main-page.component';
+import { LeftsideComponent } from './leftside/leftside.component';
+import { CenterContentComponent } from './center-content/center-content.component';
+import { RightsideComponent } from './rightside/rightside.component';
 
 
 @NgModule({
@@ -21,7 +24,10 @@ import { MainPageComponent } from './main-page/main-page.component';
     AppComponent,
     LoginScreenComponent,
     SignupScreenComponent,
-    MainPageComponent
+    MainPageComponent,
+    LeftsideComponent,
+    CenterContentComponent,
+    RightsideComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +40,7 @@ import { MainPageComponent } from './main-page/main-page.component';
     provideFirestore(() => getFirestore()),
   ],
   providers: [
-    { provide: FIREBASE_OPTIONS, useValue: environment.firebase }, LoginScreenComponent
+    { provide: FIREBASE_OPTIONS, useValue: environment.firebase }, LoginScreenComponent, CenterContentComponent
   ],
   bootstrap: [AppComponent]
 })

@@ -4,28 +4,23 @@
         <img src="../../assets/img/logo.png">
         <input class="search-dashboard" type="text" placeholder="Development-Academy durchsuchen">
         <div class="profile-container">
-            <span>Test Nutzer</span>
-            <img src="../../assets/img/profile1.png">
-            <img src="../../assets/img/keyboard_arrow_down.png">
+            <span>{{ currentUser }}</span>
+            <img (click)="toggleProfileMenu()" src="../../assets/img/profile1.png">
+            <img (click)="toggleProfileMenu()" src="../../assets/img/keyboard_arrow_down.png">
         </div>
     </div>
 
     <div class="dashboard">
-        <div class="leftside-content">
-            <div class="leftside-header">
-                <img src="../../assets/img/workspace-logo.png">
-                <h2>Development-Academy</h2>
-                <img src="../../assets/img/edit.png">
-            </div>
-        </div>
-
-        <div class="center-content">
-
-        </div>
-
-        <div class="rightside-content">
-
-        </div>
+        <app-leftside></app-leftside>
+        <app-center-content></app-center-content>
+        <app-rightside></app-rightside>
     </div>
 
+</div>
+
+<div (click)="toggleProfileMenu()" *ngIf="profileMenu" class="profileMenu-container">
+    <div class="profileMenu">
+        <div>Profil</div>
+        <div (click)="logOut()">Log out</div>
+    </div>
 </div>

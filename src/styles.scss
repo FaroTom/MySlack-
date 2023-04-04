@@ -23,3 +23,11 @@ body {
   top: 3rem;
   left: 3rem;
 }
+
+.userAlert {
+  position: absolute;
+  bottom: 6rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}

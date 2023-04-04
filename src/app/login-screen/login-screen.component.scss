@@ -127,3 +127,14 @@
 .password-input {
     background: url('../../assets/img/lock.png') no-repeat 8px;
 }
+
+.userNotFound-alert {
+    border-radius: 8px;
+    color: white;
+    background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    font-weight: 500;
+}

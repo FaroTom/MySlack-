@@ -1,0 +1,125 @@
+.center-content {
+    width:100%;
+    background-color: white;
+    height: 83vh;
+    border-radius: 2rem;
+    padding-bottom: 1.5rem;
+}
+
+.center-content-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    height: 5.5rem;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    border-top-right-radius: 2rem;
+    border-top-left-radius: 2rem;
+}
+
+.header-leftside {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding-left: 0.7rem;
+    padding-right: 0.7rem;
+    p {
+        margin: 0;
+        font-size: 22px;
+        font-weight:600
+    }
+
+    &:hover {
+        cursor: pointer;
+        background-color: rgb(236, 238, 254);
+        border-radius: 2rem;
+        color:rgb(68, 77, 242);
+    }
+}
+
+.header-rightside {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    p {
+        margin: 0;
+        font-size: 18px;
+    }
+
+    img {
+        cursor: pointer;
+    }
+}
+
+.amountOfMembers {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding-left: 0.7rem;
+    padding-right: 0.7rem;
+    &:hover {
+        cursor: pointer;
+        background-color: rgb(236, 238, 254);
+        border-radius: 2rem;
+        color: rgb(68, 77, 242);
+    }
+}
+
+.place-messages {
+    width: 100%;
+    height: 75%;
+    padding-top: 2rem;
+}
+
+.message-container {
+    display: flex;
+    align-items: center;
+    padding-left: 2rem;
+    gap: 2rem;
+    height: 8rem;
+    margin-top: 1rem;
+    box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+    &:hover {
+        cursor: pointer;
+        background-color: rgb(236, 238, 254);
+
+        .message {
+            background-color: white;
+        }
+    }
+}
+
+.picture-user {
+    p {
+        font-weight: 500;
+    }
+    img {
+        margin-bottom: 0.5rem;
+    }
+} 
+
+.message-infos {
+    div:first-child {
+        margin-bottom: 0.5rem;
+    }
+    div:last-child {
+        color:rgb(68, 77, 242);
+        width: 90%;
+        &:hover {
+            font-weight: 600;
+        }
+    }
+}
+
+.message {
+    background-color: rgb(236, 238, 254);
+    border-top-right-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    padding-top: 1.3rem;
+    padding-bottom: 1.3rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: 16px;
+}

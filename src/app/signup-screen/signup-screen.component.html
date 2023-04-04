@@ -10,12 +10,12 @@
 
         <h1>Registrierung</h1>
 
-        <form class="login-inputs" (submit)="signUp()">
-            <input class="name-input" [disabled]="loadingAnimation" [(ngModel)]="fullName" required name="fullName" type="text"
+        <form ngNativeValidate class="login-inputs" (submit)="signUp()">
+            <input class="name-input" [disabled]="loadingAnimation" [(ngModel)]="fullName" minlength="2" required name="fullName" type="text"
                 placeholder="Vor- und Nachname">
             <input class="mail-input" [disabled]="loadingAnimation" [(ngModel)]="email" required name="email" type="email"
                 placeholder="Email">
-            <input class="password-input" [disabled]="loadingAnimation" [(ngModel)]="password" required name="password" type="password"
+            <input class="password-input" [disabled]="loadingAnimation" [(ngModel)]="password" minlength="6" required name="password" type="password"
                 placeholder="Passwort">
             <button type="submit">Jetzt registrieren</button>
 
@@ -38,7 +38,7 @@
         <div class="loader"></div>
     </div>
 
-    <div *ngIf="userCreated" class="userCreated-container">
+    <div *ngIf="userCreated" class="userAlert">
         <div class="userCreated-alert">User was successfully created</div>
     </div>
 </div>

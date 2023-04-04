@@ -11,9 +11,9 @@
 
     <h1>Anmeldung</h1>
 
-    <form [formGroup]="angForm" class="login-inputs" (submit)="login()">
-        <input class="mail-input" [(ngModel)]="email" required formControlName="email" type="email" placeholder="beispielname@email.com">
-        <input class="password-input" [(ngModel)]="password" required formControlName="password" type="password" placeholder="Passwort">
+    <form ngNativeValidate class="login-inputs" (submit)="login()">
+        <input class="mail-input" [(ngModel)]="email" required name="email" type="email" placeholder="beispielname@email.com">
+        <input class="password-input" [(ngModel)]="password" required name="password" type="password" placeholder="Passwort">
         <button type="submit">Jetzt anmelden</button>
 
         <div class="strokes-container">
@@ -29,6 +29,10 @@
 
 <div class="legalNotice-container">
   <a href=""> Datenschutz & Bedingungen </a> | <a href="">Kontakt</a>  
+</div>
+
+<div *ngIf="userAlert" class="userAlert">
+    <div class="userNotFound-alert">User was not found</div>
 </div>
 
 </div>
