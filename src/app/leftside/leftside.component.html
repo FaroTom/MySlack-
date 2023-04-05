@@ -32,7 +32,7 @@
     <div *ngIf="dmDropdown" class="dropdown-leftside">
 
         <div *ngFor="let colleague of this.colleagues" class="dm">
-            <img src="../../assets/img/avatar_1.png">
+            <img src="../../assets/img/{{ colleague.picture }}">
             <p>{{ colleague.name }}</p>
         </div>
 

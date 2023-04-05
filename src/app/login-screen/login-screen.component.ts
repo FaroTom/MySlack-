@@ -33,6 +33,12 @@ export class LoginScreenComponent {
     for (let i = 0; i < this.registeredUsers.length; i++) {
       const element = this.registeredUsers[i];
       if (element['email'] == this.email && element['password'] == this.password) {
+        this.firestore
+          .collection('currentUser')
+          .doc('TP2JYunsMv7Ujn29QJIB')
+          .update({
+            currentUser: element['name']
+          })
         this.router.navigateByUrl('/dashboard');
       } else {
         this.userAlert = true;
@@ -44,8 +50,13 @@ export class LoginScreenComponent {
   }
 
   guestLogin() {
+    this.firestore
+      .collection('currentUser')
+      .doc('TP2JYunsMv7Ujn29QJIB')
+      .update({
+        currentUser: 'Guest'
+      })
     this.router.navigateByUrl('/dashboard');
-    this.appcomponent.currentUser = 'Guest';
   }
 
 }

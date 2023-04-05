@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { MainPageComponent } from '../main-page/main-page.component';
 
 @Component({
   selector: 'app-center-content',
@@ -7,27 +8,50 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
   styleUrls: ['./center-content.component.scss']
 })
 export class CenterContentComponent {
-  currentChannel = 'community'
-  allMessages: any;
-  messagesAsArray: any;
-  contributors: any = [];
+  currentChat: any;
   messages: any = [];
+  chatParticipants: any;
+  @Input() newMessage!: string;
 
-  constructor(private firestore: AngularFirestore) {
+  constructor(private firestore: AngularFirestore, private mainpage: MainPageComponent) {
+    this.firestore
+      .collection('currentChat')
+      .doc('currentChat')
+      .valueChanges()
+      .subscribe(currentChat => {
+        this.currentChat = Object.values(currentChat!)
+        this.loadMessages()
+      })
+  }
+
+  loadMessages() {
     this.firestore
       .collection('channels')
-      .doc(this.currentChannel)
+      .doc(this.currentChat[0])
       .collection('messages')
       .valueChanges()
       .subscribe(messages => {
-        this.allMessages = messages;
-        console.log(this.allMessages)
-        this.messagesAsArray = Object.values(this.allMessages)
-        for (let i = 0; i < this.messagesAsArray.length; i++) {
-          const element = this.messagesAsArray[i]['message'];
-          this.messages.push(element)
-        }
+        this.messages = Object.values(messages!)
       })
-      }
-  
+  }
+
+  sendNewMessage() {
+    let date = new Date().toLocaleDateString()
+    let times = new Date().toLocaleTimeString().split(':')
+    let time = times[0] + ':' + times[1] + 'Uhr'
+    if (this.newMessage != undefined) {
+      this.firestore
+        .collection('channels')
+        .doc(this.currentChat[0])
+        .collection('messages')
+        .add( {
+          name: this.mainpage.currentUser[0],
+          message: this.newMessage,
+          date: date,
+          time: time,
+        })
+        this.newMessage = '';
+    }
+  }
+
 }

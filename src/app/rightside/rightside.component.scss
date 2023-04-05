@@ -1,9 +1,29 @@
 .rightside-content {
-    width: calc(100% - 3rem);
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-    padding-top: 1.5rem;
+    width: 100%;
     background-color: white;
     height: 83vh;
     border-radius: 2rem;
+    padding-bottom: 1.5rem;
+}
+
+.rightside-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    height: 5.5rem;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    border-top-right-radius: 2rem;
+    border-top-left-radius: 2rem;
+
+    p {
+        margin: 0;
+        font-size: 22px;
+        font-weight:600
+    }
+
+    img {
+        cursor: pointer;
+    }
 }

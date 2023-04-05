@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AppComponent } from '../app.component';
 import { Router } from '@angular/router';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 
 @Component({
   selector: 'app-main-page',
@@ -11,8 +12,13 @@ export class MainPageComponent {
   currentUser: any;
   profileMenu = false;
 
-  constructor(private appcomponent: AppComponent, private router: Router) {
-    this.currentUser = appcomponent.currentUser;
+  constructor(private appcomponent: AppComponent, private router: Router, private firestore: AngularFirestore) {
+    this.firestore
+        .collection('currentUser')
+        .valueChanges()
+        .subscribe(user => {
+          this.currentUser = Object.values(user[0]!)
+        })
   }
 
   toggleProfileMenu() {

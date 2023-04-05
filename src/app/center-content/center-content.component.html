@@ -4,7 +4,7 @@
 
         <div class="header-leftside">
             <img src="../../assets/img/tag.png">
-            <p>{{ currentChannel }}</p>
+            <p>{{ currentChat }}</p>
             <img src="../../assets/img/keyboard_arrow_down.png">
         </div>
 
@@ -22,14 +22,19 @@
         <div *ngFor="let message of messages" class="message-container">
             <div class="picture-user">
                 <img src="../../assets/img/big_avatar4.png">
-                <p>{{ message[0] }}</p>
+                <p>{{ message['name'] }}</p>
             </div>
 
             <div class="message-infos">
-                <div class="message"> {{ message[1] }} </div>
-                <div class="reactions"> 2 Antworten </div>
+                <div class="message"> {{ message['message'] }} </div>
+                <div>{{ message['date'] }}   {{ message['time'] }}</div>
             </div>
         </div>
+    </div>
+
+    <div class="write-message">
+        <Input [(ngModel)]="newMessage" name="newMessage" ngDefaultControl placeholder="Nachricht an #{{ currentChat }}">
+        <img (click)="sendNewMessage()" src="../../assets/img/send.png">
     </div>
 
 </div>

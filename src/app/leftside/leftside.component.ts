@@ -14,7 +14,7 @@ export class LeftsideComponent {
   colleagues: any;
   channels: any;
 
-  constructor(private firestore: AngularFirestore, private centerContent: CenterContentComponent) {
+  constructor(private firestore: AngularFirestore, private centerContent: CenterContentComponent, private mainpage: MainPageComponent) {
     this.firestore
       .collection('colleagues')
       .valueChanges()
@@ -47,7 +47,11 @@ export class LeftsideComponent {
   }
 
   setCurrentChannel(channel: any) {
-    this.centerContent.currentChannel = channel;
-    console.log(this.centerContent.currentChannel)
+    this.firestore
+      .collection('currentChat')
+      .doc('currentChat')
+      .update({
+        "currentChat": channel
+      })
   }
 }

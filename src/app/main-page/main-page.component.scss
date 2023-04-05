@@ -22,6 +22,9 @@
     font-size: 16px;
     padding-left: 2.5rem;
     background: url('../../assets/img/search.png') no-repeat 95% white;
+    &:focus {
+        outline: none;
+    }
 }
 
 .profile-container {
