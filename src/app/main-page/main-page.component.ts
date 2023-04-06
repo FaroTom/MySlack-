@@ -10,23 +10,62 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 })
 export class MainPageComponent {
   currentUser: any;
-  profileMenu = false;
+  currentName!: string;
+  currentEmail!: string;
+  changedMail!: string;
+  menu = false;
+  profile = false;
+  changeMail = false;
+  changedMailAlert = false;
 
   constructor(private appcomponent: AppComponent, private router: Router, private firestore: AngularFirestore) {
     this.firestore
         .collection('currentUser')
         .valueChanges()
         .subscribe(user => {
-          this.currentUser = Object.values(user[0]!)
+          this.currentUser = Object.values(user!)
+          this.currentName = this.currentUser[0]['currentName']
+          this.currentEmail = this.currentUser[0]['currentEmail']
         })
   }
 
-  toggleProfileMenu() {
-    if (this.profileMenu == false) {
-      this.profileMenu = true;
+  toggleMenu() {
+    if (this.menu == false) {
+      this.menu = true;
     } else {
-      this.profileMenu = false;
+      this.menu = false;
     }
+  }
+
+  toggleProfile() {
+    this.menu = false;
+    if(this.profile == false) {
+      this.profile = true;
+    } else {
+      this.profile = false;
+    }
+  }
+
+  toggleChangeProfile() {
+    if(this.changeMail == false) {
+      this.changeMail = true;
+    } else {
+      this.changeMail = false;
+    }
+  }
+
+  submitChangedMail() {
+    this.firestore
+      .collection('currentUser')
+      .doc('TP2JYunsMv7Ujn29QJIB')
+      .update({
+        currentEmail: this.changedMail
+      })
+      this.changedMailAlert = true;
+      this.changeMail = false;
+      setTimeout(() => {
+        this.changedMailAlert = false;
+      }, 3500)
   }
 
   logOut() {

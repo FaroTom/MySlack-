@@ -55,16 +55,16 @@
     justify-content: space-between;
 }
 
-.profileMenu-container {
+.menu-container {
     position: absolute;
     top: 0;
-    background-color: rgb(236, 238, 254, 0.25) ;
+    background-color: rgb(236, 238, 254, 0.35) ;
     z-index: 1;
     height: 100%;
     width: 100%;
 }
 
-.profileMenu {
+.menu {
     position: absolute;
     top: 8rem;
     right: 2rem;
@@ -96,6 +96,133 @@
             color: rgb(68, 77, 242);
         }
     }
+}
+
+.profile {
+    position: absolute;
+    top: 8rem;
+    right: 2rem;
+    height: 34rem;
+    width: 28rem;
+    background-color: white;
+    border-bottom-left-radius: 2rem;
+    border-top-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    z-index: 2;
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: calc(100% - 6rem);
+    padding-left: 3rem;
+    padding-right: 3rem;
+
+    p {
+        font-size: 22px;
+        font-weight: 600;
+        margin: 0;
+    }
+
+    img {
+        cursor: pointer;
+    }
+}
+
+.place-image {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.name-and-edit {
+    width: calc(100% - 6rem);
+    padding-left: 3rem;
+    padding-right: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    p {
+        margin: 0;
+    }
+
+    p:first-child {
+        font-size: 24px;
+        font-weight: 600;
+    }
+
+    p:last-child {
+        color:rgb(68, 77, 242);
+        font-size: 16px;
+        &:hover {
+            font-weight: 500;
+            cursor: pointer;
+        }
+    }
+}
+
+.place-email {
+    width: calc(100% - 6rem);
+    padding-left: 3rem;
+    padding-right: 3rem;
+    display: flex;
+    align-items: center;
+
+    p {
+        margin: 0;
+        padding-left: 1.5rem;
+        font-size: 16px;
+    }
+}
+
+.change-mail {
+    display: flex;
+    align-items: center;
+
+    input {
+        border-radius: 2rem;
+        padding: 0.4rem;
+        margin-left: 1rem;
+    }
+
+    button {
+        border-radius: 2rem;
+        border: none;
+        background-color: rgb(68, 77, 242);
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0.5rem;
+        margin-left: 0.5rem;
+        &:hover {
+            cursor: pointer;
+            filter:brightness(1.15)
+        }
+    }
+}
+
+.alert-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 5rem;
+}
+
+.changedMailAlert {
+    background-color: rgb(68, 77, 242);
+    color: white;
+    padding: 1rem;
+    border-radius: 2rem;
+    border: none;
+    z-index: 2;
 }
 
 app-center-content {

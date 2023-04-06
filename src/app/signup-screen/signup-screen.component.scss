@@ -60,6 +60,10 @@
             text-decoration: underline;
         }
     }
+
+    button {
+        display: none;
+    }
 }
 
 .legalNotice-container {
@@ -170,4 +174,118 @@
 
 .password-input {
     background: url('../../assets/img/lock.png') no-repeat 8px;
+}
+
+@media (max-width: 700px) {
+    .newToSlack-container {
+        top: unset;
+        bottom: 6rem;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+        gap: 0.5rem;
+
+        a {
+            display: none;
+        }
+
+        button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0.7rem;
+            color:rgb(68, 77, 242);
+            border: 1px solid rgb(68, 77, 242);
+            border-radius: 2rem;
+            &:hover {
+                cursor: pointer;
+                background-color: rgb(68, 77, 242);
+                color: white;
+            }
+        }
+    }
+
+    .login-infos {
+        input {
+            width: 300px;
+        }
+        button {
+            width: 360px;
+        }
+    }
+
+    .place-logo {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        top: 4rem;
+
+        img {
+            position: unset;
+        }
+    }
+}
+
+@media (max-width: 475px) {
+    .login-infos {
+        padding-left: 0.7rem;
+        padding-right: 0.7rem;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+
+        h1 {
+            font-size: 28px;
+            padding-bottom: 0.5rem;
+        }
+
+        input {
+            width: 250px;
+        }
+
+        button {
+            width: 310px;
+            font-size: 16px;
+        }
+    }
+
+    .strokes-container {
+        width: 310px;
+
+        hr {
+            width: 105px;
+        }
+    }
+}
+
+
+@media (max-height: 890px) {
+    .place-logo {
+        top: 1.5rem;
+    }
+
+    .legalNotice-container {
+        display: none;
+    }
+
+    .newToSlack-container {
+        bottom: 2rem;
+    }
+
+    .login-infos {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+}
+
+@media (max-height: 750px) {
+    .newToSlack-container {
+        bottom: 1rem;
+    }
+
+    .place-logo {
+        top: 1rem;
+    }
 }

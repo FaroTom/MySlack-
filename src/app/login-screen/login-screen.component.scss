@@ -53,6 +53,10 @@
             text-decoration: underline;
         }
     }
+
+    button {
+        display: none;
+    }
 }
 
 .legalNotice-container {
@@ -118,6 +122,10 @@
         width: 136px;
         margin: 0;
     }
+
+    p {
+        margin: 0;
+    }
 }
 
 .mail-input {
@@ -137,4 +145,110 @@
     justify-content: center;
     padding: 16px;
     font-weight: 500;
+}
+
+@media (max-width: 700px) {
+    .newToSlack-container {
+        top: unset;
+        bottom: 6rem;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+        gap: 0.5rem;
+
+        a {
+            display: none;
+        }
+
+        button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0.7rem;
+            color:rgb(68, 77, 242);
+            border: 1px solid rgb(68, 77, 242);
+            border-radius: 2rem;
+            &:hover {
+                cursor: pointer;
+                background-color: rgb(68, 77, 242);
+                color: white;
+            }
+        }
+    }
+
+    .login-infos {
+        input {
+            width: 300px;
+        }
+        button {
+            width: 360px;
+        }
+    }
+
+    .place-logo {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        top: 4rem;
+
+        img {
+            position: unset;
+        }
+    }
+   
+}
+
+@media (max-width: 475px) {
+    .login-infos {
+        padding-left: 0.7rem;
+        padding-right: 0.7rem;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+
+        h1 {
+            font-size: 28px;
+            padding-bottom: 0.5rem;
+        }
+
+        input {
+            width: 250px;
+        }
+
+        button {
+            width: 310px;
+            font-size: 16px;
+        }
+    }
+
+    .strokes-container {
+        width: 310px;
+
+        hr {
+            width: 105px;
+        }
+    }
+}
+
+@media (max-height: 800px) {
+    .place-logo {
+        top: 1.5rem;
+    }
+
+    .legalNotice-container {
+        display: none;
+    }
+
+    .newToSlack-container {
+        bottom: 2rem;
+    }
+}
+
+@media (max-height: 700px) {
+    .login-infos {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
 }

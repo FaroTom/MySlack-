@@ -37,7 +37,8 @@ export class LoginScreenComponent {
           .collection('currentUser')
           .doc('TP2JYunsMv7Ujn29QJIB')
           .update({
-            currentUser: element['name']
+            currentName: element['name'],
+            currentEmail: element['email']
           })
         this.router.navigateByUrl('/dashboard');
       } else {

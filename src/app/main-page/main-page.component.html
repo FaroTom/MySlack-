@@ -4,9 +4,9 @@
         <img src="../../assets/img/logo.png">
         <input class="search-dashboard" type="text" placeholder="Development-Academy durchsuchen">
         <div class="profile-container">
-            <span>{{ currentUser }}</span>
-            <img (click)="toggleProfileMenu()" src="../../assets/img/profile1.png">
-            <img (click)="toggleProfileMenu()" src="../../assets/img/keyboard_arrow_down.png">
+            <span>{{ currentName }}</span>
+            <img (click)="toggleMenu()" src="../../assets/img/profile1.png">
+            <img (click)="toggleMenu()" src="../../assets/img/keyboard_arrow_down.png">
         </div>
     </div>
 
@@ -18,9 +18,39 @@
 
 </div>
 
-<div (click)="toggleProfileMenu()" *ngIf="profileMenu" class="profileMenu-container">
-    <div class="profileMenu">
-        <div>Profil</div>
+<div (click)="toggleMenu()" *ngIf="menu" class="menu-container">
+    <div class="menu">
+        <div (click)="toggleProfile()">Profil</div>
         <div (click)="logOut()">Log out</div>
     </div>
+</div>
+
+<div *ngIf="profile" class="menu-container">
+    <div class="profile">
+        <div class="profile-header">
+            <p>Profil</p>
+            <img (click)="toggleProfile()" src="../../assets/img/close.png">
+        </div>
+
+        <div class="place-image">
+            <img src="../../assets/img/large-profile.png">
+        </div>
+
+        <div class="name-and-edit">
+            <p>{{ currentName }}</p>
+            <p (click)="toggleChangeProfile()">Bearbeiten</p>
+        </div>
+
+        <div class="place-email">
+            <img src="../../assets/img/big-mail.png">
+            <p *ngIf="!changeMail">{{ currentEmail }}</p>
+            <div class="change-mail" *ngIf="changeMail"> 
+                <input [(ngModel)]="changedMail" required minlength="5"placeholder="{{ currentEmail }}" type="email" name="changeMail"> 
+                <button (click)="submitChangedMail()">Ändern</button></div>
+        </div>
+    </div>
+</div>
+
+<div class="alert-container">
+    <div *ngIf="changedMailAlert" class="changedMailAlert">Email wurde geändert</div>
 </div>
