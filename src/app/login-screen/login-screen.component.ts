@@ -55,7 +55,8 @@ export class LoginScreenComponent {
       .collection('currentUser')
       .doc('TP2JYunsMv7Ujn29QJIB')
       .update({
-        currentUser: 'Guest'
+        currentName: 'Guest',
+        currentEmail: 'guest@mail.com'
       })
     this.router.navigateByUrl('/dashboard');
   }

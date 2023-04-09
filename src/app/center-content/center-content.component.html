@@ -19,7 +19,7 @@
     </div>
 
     <div class="place-messages">
-        <div *ngFor="let message of messages" class="message-container">
+        <div (click)="openMessage(message.Id)" *ngFor="let message of messages" class="message-container">
             <div class="picture-user">
                 <img src="../../assets/img/big_avatar1.png">
                 <p>{{ message['name'] }}</p>

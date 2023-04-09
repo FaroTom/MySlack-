@@ -17,6 +17,8 @@ export class MainPageComponent {
   profile = false;
   changeMail = false;
   changedMailAlert = false;
+  openedMessage: any;
+  responses: any;
 
   constructor(private appcomponent: AppComponent, private router: Router, private firestore: AngularFirestore) {
     this.firestore

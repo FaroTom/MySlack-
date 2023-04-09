@@ -1,6 +1,45 @@
 <div class="rightside-content">
     <div class="rightside-header">
         <p>Thread</p>
-        <img src="../../assets/img/close.png">
+        <img (click)="unsetOpenedMessage()" src="../../assets/img/close.png">
+    </div>
+
+    <div *ngIf="mainpage.openedMessage != undefined" class="place-clickedMessage">
+
+        <div class="clickedMessage-container">
+            <div class="picture-user">
+                <img src="../../assets/img/big_avatar1.png">
+                <p>{{ mainpage.openedMessage['name'] }}</p>
+            </div>
+
+            <div class="clickedMessage-infos">
+                <div class="message"> {{ mainpage.openedMessage['message'] }} </div>
+                <div>{{ mainpage.openedMessage['date'] }}   {{ mainpage.openedMessage['time'] }}</div>
+            </div>
+        </div>
+
+        <div class="parting-line">
+            <hr> Antworten  <hr>
+        </div>
+
+        <div class="place-responses">
+            <div *ngFor="let response of mainpage.responses" class="clickedMessage-container">
+                <div class="picture-user">
+                    <img src="../../assets/img/big_avatar1.png">
+                    <p>{{ response.name.currentName }}</p>
+                </div>
+    
+                <div class="clickedMessage-infos">
+                    <div class="message"> {{ response.message }} </div>
+                    <div>{{ response.date }}   {{ response.time }}</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="write-message">
+            <Input [(ngModel)]="newResponse" name="newResponse" ngDefaultControl placeholder="Antworten...">
+            <img (click)="sendNewResponse()" src="../../assets/img/send.png">
+        </div>
+
     </div>
 </div>
