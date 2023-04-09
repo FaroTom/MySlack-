@@ -52,7 +52,7 @@
     }
 }
 
-.amountOfMembers {
+.amountOfParticipants {
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -82,7 +82,7 @@
     align-items: center;
     padding-left: 2rem;
     gap: 2rem;
-    height: 8rem;
+    height: 7rem;
     margin-bottom: 1rem;
     box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
     &:hover {
@@ -98,9 +98,7 @@
 .picture-user {
     p {
         font-weight: 500;
-    }
-    img {
-        margin-bottom: 0.5rem;
+        margin: 0;
     }
 } 
 

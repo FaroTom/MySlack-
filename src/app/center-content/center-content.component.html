@@ -9,12 +9,13 @@
         </div>
 
         <div class="header-rightside">
-            <div class="amountOfMembers">
+            <div (click)="toggleParticipants()" class="amountOfParticipants">
                 <img src="../../assets/img/small_avatar.png">
-                <p>3</p>
+                <p *ngIf="mainpage.participants != undefined">{{ mainpage.participants.length }}</p>
             </div>
             <img src="../../assets/img/add_members_button.png">
         </div>
+        
 
     </div>
 

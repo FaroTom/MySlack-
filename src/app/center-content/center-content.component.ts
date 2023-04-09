@@ -11,11 +11,9 @@ import { RightsideComponent } from '../rightside/rightside.component';
 export class CenterContentComponent {
   currentChat: any;
   messages: any = [];
-  chatParticipants: any;
   @Input() newMessage!: string;
-  responses: any;
 
-  constructor(private firestore: AngularFirestore, private mainpage: MainPageComponent) {
+  constructor(private firestore: AngularFirestore, public mainpage: MainPageComponent) {
     this.firestore
       .collection('currentChat')
       .doc('currentChat')
@@ -23,6 +21,7 @@ export class CenterContentComponent {
       .subscribe(currentChat => {
         this.currentChat = Object.values(currentChat!)
         this.loadMessages()
+        this.loadParticipants()
       })
   }
 
@@ -37,6 +36,17 @@ export class CenterContentComponent {
       })
   }
 
+  loadParticipants() {
+    this.firestore
+      .collection('channels')
+      .doc(this.currentChat[0])
+      .collection('participants')
+      .valueChanges()
+      .subscribe(participants => {
+        this.mainpage.participants = participants;
+      })
+  }
+
   loadResponses() {
     this.firestore
       .collection('channels')
@@ -47,7 +57,6 @@ export class CenterContentComponent {
       .valueChanges()
       .subscribe(responses => {
         this.mainpage.responses = responses;
-        console.log(this.mainpage.responses)
       })
   }
 
@@ -82,6 +91,14 @@ export class CenterContentComponent {
         this.mainpage.openedMessage = message;
         this.loadResponses()
       })
+  }
+
+  toggleParticipants() {
+    if(this.mainpage.showParticipants == false) {
+      this.mainpage.showParticipants = true
+    } else {
+      this.mainpage.showParticipants = false;
+    }
   }
 
 }

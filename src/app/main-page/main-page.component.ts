@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { AppComponent } from '../app.component';
 import { Router } from '@angular/router';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { CenterContentComponent } from '../center-content/center-content.component';
 
 @Component({
   selector: 'app-main-page',
@@ -19,6 +20,8 @@ export class MainPageComponent {
   changedMailAlert = false;
   openedMessage: any;
   responses: any;
+  participants: any;
+  showParticipants = false;
 
   constructor(private appcomponent: AppComponent, private router: Router, private firestore: AngularFirestore) {
     this.firestore
@@ -53,6 +56,14 @@ export class MainPageComponent {
       this.changeMail = true;
     } else {
       this.changeMail = false;
+    }
+  }
+
+  toggleParticipants() {
+    if(this.showParticipants == false) {
+      this.showParticipants = true
+    } else {
+      this.showParticipants = false;
     }
   }
 

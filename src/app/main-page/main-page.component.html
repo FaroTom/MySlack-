@@ -54,3 +54,17 @@
 <div class="alert-container">
     <div *ngIf="changedMailAlert" class="changedMailAlert">Email wurde geändert</div>
 </div>
+
+<div (click)="toggleParticipants()" *ngIf="showParticipants" class="participants-shown-container">
+    <div class="participants-shown">
+        <div class="participants-shown-headline">
+            <h2>Mitglieder</h2> <img (click)="toggleParticipants()" src="../../assets/img/close.png">
+        </div>
+
+        <div class="participants-list">
+            <div class="single-participant" *ngFor="let participant of participants">
+                <img src="../../assets/img/avatar_1.png"> <p> {{ participant.name }} </p>
+            </div>
+        </div>
+    </div>
+</div>
