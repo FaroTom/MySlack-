@@ -73,16 +73,12 @@
     overflow-y: scroll;
 }
 
-::-webkit-scrollbar {
-    display: none;
-}
 
 .message-container {
     display: flex;
     align-items: center;
     padding-left: 2rem;
     gap: 2rem;
-    height: 7rem;
     margin-bottom: 1rem;
     box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
     &:hover {
@@ -108,7 +104,7 @@
     }
     div:last-child {
         color:rgb(68, 77, 242);
-        width: 90%;
+        width: 100%;
         &:hover {
             font-weight: 600;
         }

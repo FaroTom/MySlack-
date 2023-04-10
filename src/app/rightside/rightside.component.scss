@@ -40,11 +40,9 @@
     padding-left: 1.5rem;
     padding-right: 1.5rem;
     gap: 2rem;
-    height: 7rem;
     margin-bottom: 1rem;
     box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
     &:hover {
-        cursor: pointer;
         background-color: rgb(236, 238, 254);
 
         .message {
@@ -80,6 +78,8 @@
 
 .parting-line {
     padding-top: 1rem;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
     display: flex;
     align-items: center;
     color:rgb(176, 177, 182);
@@ -92,7 +92,7 @@
 .place-responses {
     height: 21.5rem;
     overflow-y: scroll;
-    padding-top: 1rem;
+    margin-top: 1rem;
 }
 
 .write-message {
@@ -125,8 +125,4 @@
             
         }
     }
-}
-
-::-webkit-scrollbar {
-    display: none;
 }

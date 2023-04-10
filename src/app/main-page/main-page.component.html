@@ -66,5 +66,23 @@
                 <img src="../../assets/img/avatar_1.png"> <p> {{ participant.name }} </p>
             </div>
         </div>
+
+        <div (click)="toggleAddParticipants()" class="addParticipant-container">
+            <img src="../../assets/img/add_members_button.png"> <p>Mitglieder hinzufügen</p>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="addParticipants" class="participants-shown-container">
+    <div class="add-participants">
+        <div>
+            <h2>Leute hinzufügen</h2> <img (click)="toggleAddParticipants()" src="../../assets/img/close.png">
+        </div>
+
+        <input [(ngModel)]="addParticipant" type="text" name="addParticipant" placeholder="Name eingeben">
+
+        <div>
+            <button>Hinzufügen</button>
+        </div>
     </div>
 </div>

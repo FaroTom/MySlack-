@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { AppComponent } from '../app.component';
 import { Router } from '@angular/router';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
@@ -10,6 +10,8 @@ import { CenterContentComponent } from '../center-content/center-content.compone
   styleUrls: ['./main-page.component.scss']
 })
 export class MainPageComponent {
+  @Input() addParticipant: any;
+
   currentUser: any;
   currentName!: string;
   currentEmail!: string;
@@ -22,6 +24,7 @@ export class MainPageComponent {
   responses: any;
   participants: any;
   showParticipants = false;
+  addParticipants = false;
 
   constructor(private appcomponent: AppComponent, private router: Router, private firestore: AngularFirestore) {
     this.firestore
@@ -64,6 +67,14 @@ export class MainPageComponent {
       this.showParticipants = true
     } else {
       this.showParticipants = false;
+    }
+  }
+
+  toggleAddParticipants() {
+    if(this.addParticipants == false) {
+      this.addParticipants = true
+    } else {
+      this.addParticipants = false;
     }
   }
 
