@@ -11,6 +11,7 @@ import { RightsideComponent } from '../rightside/rightside.component';
 export class CenterContentComponent {
   currentChat: any;
   messages: any = [];
+  channelInfos = false;
   @Input() newMessage!: string;
 
   constructor(private firestore: AngularFirestore, public mainpage: MainPageComponent) {
@@ -98,6 +99,14 @@ export class CenterContentComponent {
       this.mainpage.showParticipants = true
     } else {
       this.mainpage.showParticipants = false;
+    }
+  }
+
+  toggleChannelInfos() {
+    if(this.channelInfos == false) {
+      this.channelInfos = true
+    } else {
+      this.channelInfos = false;
     }
   }
 

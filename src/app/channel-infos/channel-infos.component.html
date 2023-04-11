@@ -1,0 +1,19 @@
+<div class="overlay-channel-infos">
+    <div class="channel-infos">
+
+        <div class="channel-infos-header">
+           <div><img src="../../assets/img/tag.png"> <h2>{{ centerComponent.currentChat }}</h2> </div> <img (click)="centerComponent.toggleChannelInfos()" src="../../assets/img/close.png">
+        </div>
+
+        <div class="channel-infos-container">
+            <div> <h2>Channel-name</h2> <p>Bearbeiten</p> </div>
+            <div> <img src="../../assets/img/tag.png"> <p>{{ centerComponent.currentChat }}</p> </div>
+        </div>
+
+        <div class="channel-infos-container">
+            <div> <h2>Beschreibung</h2> <p>Bearbeiten</p> </div>
+            <div> {{ channelDescription }} </div>
+        </div>
+
+    </div>
+</div>

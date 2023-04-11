@@ -17,6 +17,8 @@ import { MainPageComponent } from './main-page/main-page.component';
 import { LeftsideComponent } from './leftside/leftside.component';
 import { CenterContentComponent } from './center-content/center-content.component';
 import { RightsideComponent } from './rightside/rightside.component';
+import { NewChannelComponent } from './new-channel/new-channel.component';
+import { ChannelInfosComponent } from './channel-infos/channel-infos.component';
 
 
 @NgModule({
@@ -27,7 +29,9 @@ import { RightsideComponent } from './rightside/rightside.component';
     MainPageComponent,
     LeftsideComponent,
     CenterContentComponent,
-    RightsideComponent
+    RightsideComponent,
+    NewChannelComponent,
+    ChannelInfosComponent
   ],
   imports: [
     BrowserModule,

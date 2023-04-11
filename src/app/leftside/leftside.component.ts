@@ -13,6 +13,7 @@ export class LeftsideComponent {
   dmDropdown = false;
   colleagues: any;
   channels: any;
+  newChannel = false;
 
   constructor(private firestore: AngularFirestore, private centerContent: CenterContentComponent, private mainpage: MainPageComponent) {
     this.firestore
@@ -43,6 +44,14 @@ export class LeftsideComponent {
       this.dmDropdown = true;
     } else {
       this.dmDropdown = false;
+    }
+  }
+
+  toggleNewChannel() {
+    if(this.newChannel == false) {
+      this.newChannel = true;
+    } else {
+      this.newChannel = false;
     }
   }
 

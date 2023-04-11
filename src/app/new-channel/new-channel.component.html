@@ -1,0 +1,19 @@
+<div class="overlay-new-channel">
+    <div class="add-new-channel">
+
+        <div class="new-channel-header"> <h2>Channel erstellen</h2> <img (click)="toggleNewChannel()" src="../../assets/img/close.png"> </div>
+
+        <div class="new-channel-text">
+            Channels dienen deinem Team zur Kommunikation. Am besten sollten sie themenbezogen sein <br> #marketing zum Beispiel.
+        </div>
+
+        <p>Channel Name</p>
+
+        <input [(ngModel)]="newChannelName" placeholder="# z.B Kooperationsprojekte" type="text" name="channelName">
+
+        <div class="place-button">
+            <button (click)="createNewChannel()">Erstellen</button>
+        </div>
+
+    </div>
+</div>

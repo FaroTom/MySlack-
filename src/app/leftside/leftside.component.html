@@ -13,12 +13,15 @@
 
     <div *ngIf="channelDropdown" class="dropdown-leftside">
 
-        <div *ngFor="let channel of this.channels" (click)="setCurrentChannel(channel.channelName)"  class="channel">
-            <img src="../../assets/img/tag.png"> 
-            <p>{{ channel.channelName }}</p>
+        <div class="place-channels">
+            <div *ngFor="let channel of this.channels" (click)="setCurrentChannel(channel.channelName)"  class="channel">
+                <img src="../../assets/img/tag.png"> 
+                <p>{{ channel.channelName }}</p>
+            </div>
         </div>
+        
 
-        <div class="addMoreChannels">
+        <div (click)="toggleNewChannel()" class="addMoreChannels">
             <img src="../../assets/img/add_circle.png">
             <p>Channel hinzufügen</p>
         </div>
@@ -31,11 +34,16 @@
 
     <div *ngIf="dmDropdown" class="dropdown-leftside">
 
-        <div *ngFor="let colleague of this.colleagues" class="dm">
-            <img src="../../assets/img/{{ colleague.picture }}">
-            <p>{{ colleague.name }}</p>
+        <div class="place-colleagues">
+            <div *ngFor="let colleague of this.colleagues" class="dm">
+                <img src="../../assets/img/{{ colleague.picture }}">
+                <p>{{ colleague.name }}</p>
+            </div>
         </div>
+        
 
     </div>
 
 </div>
+
+<app-new-channel *ngIf="newChannel"></app-new-channel>

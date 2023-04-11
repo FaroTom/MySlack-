@@ -85,26 +85,23 @@
     padding-right: 0.8rem;
     padding-top: 0.3rem;
     padding-bottom: 0.3rem;
-    margin-top: 1.2rem;
+    margin-top: 0rem;
+
+    &:hover {
+        cursor: pointer;
+        background-color:rgb(236, 238, 254);
+        border-radius: 2rem;
+
+        p {
+            color: rgb(68, 77, 242);
+        }
+    }
 
     p {
         margin: 0;
         margin-left: 0.75rem;
-
-        &:hover {
-            color: rgb(68, 77, 242);
-            cursor: pointer;
-        }
     }
 
-    img {
-        padding: 0.3rem;
-        &:hover {
-            cursor: pointer;
-            background-color: rgb(236, 238, 254);
-            border-radius: 100%;
-        }
-    }
 }
 
 .dm-selection {
@@ -134,4 +131,16 @@
         padding-left: 0.75rem;
         font-size: 16px;
     }
+}
+
+.place-channels {
+    overflow: scroll;
+    height: 13rem;
+    width: 100%;
+}
+
+.place-colleagues {
+    overflow: scroll;
+    width: 100%;
+    height: 19rem;
 }

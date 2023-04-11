@@ -2,7 +2,7 @@
 
     <div class="center-content-header">
 
-        <div class="header-leftside">
+        <div (click)="toggleChannelInfos()" class="header-leftside">
             <img src="../../assets/img/tag.png">
             <p>{{ currentChat }}</p>
             <img src="../../assets/img/keyboard_arrow_down.png">
@@ -39,3 +39,5 @@
     </div>
 
 </div>
+
+<app-channel-infos *ngIf="channelInfos"></app-channel-infos>
